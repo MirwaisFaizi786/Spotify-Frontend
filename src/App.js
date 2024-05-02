@@ -6,7 +6,8 @@ function App() {
 
   return (
     <div className="w-screen h-screen">
-      <Layout />
+      <h1 className="text-white">asdfasdf</h1>
+      {/* <Layout /> */}
     </div>
   );
 }

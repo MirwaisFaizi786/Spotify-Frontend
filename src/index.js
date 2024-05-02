@@ -7,20 +7,21 @@ import NewPost from './components/NewPost';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
+import Search from './components/Search';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
  const route = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout/>, 
     children: [
       {
         path: "/home",
         element: <Home/>
       },
       {
-        path: "/new",
-        element: <NewPost/>,
+        path: "/search",
+        element: <Search/>,
         children: [
           {
             path: "about",
@@ -28,6 +29,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
           }
         ]
       },
+      {
+        path: "/about",
+        element: <About/>
+      }
     ]
   }
  ])

@@ -7,7 +7,7 @@ function Sidebar(props) {
  
   const [expanded, setExpanded] = useState(true);
   return (
-    <aside className="flex-1 bg-gray-800 rounded-md">
+    <aside className="flex-1 h-screen bg-gray-800 rounded-md sticky top-0 ">
       <nav className="h-full flex flex-col shadow-sm bg-gray-800 rounded-md">
         <div className="HEADER-NAV flex justify-between items-center p-4 border-b border-gray-600 pb-2">
           <img
@@ -31,7 +31,7 @@ function Sidebar(props) {
         <SideBarContext.Provider value={{expanded}}>
           <ul className="flex-1 px-3 py-2">{props.children}</ul>
         </SideBarContext.Provider>
-        <div className="border-t flex p-3">
+        <div className="border-t-gray-600 border-t flex p-3">
           <img
             src="https://avatars.githubusercontent.com/u/39876?v=4"
             className="w-8 h-8 rounded-full object-cover"
@@ -42,10 +42,10 @@ function Sidebar(props) {
             ${expanded ? "w-52 ml-3" : "w-0"}`}
           >
             <div className="leading-4">
-              <h4 className="font-semibold">Samera</h4>
-              <p className="text-sm text-gray-600">samera.f@gmail.com</p>
+              <h4 className="font-semibold text-gray-300">Samera</h4>
+              <p className="text-sm text-gray-400">samera.f@gmail.com</p>
             </div>
-            <MdMoreVert size={20} />
+            <MdMoreVert className="text-gray-300" size={20} />
           </div>
         </div>
       </nav>
