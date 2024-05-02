@@ -1,9 +1,9 @@
 import { IoPlayBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-function Navbar({ navLinkClicked, setNavLinkClicked }) {
+function Navbar() {
   return (
-    <Link to="/home" onClick={() => setNavLinkClicked(!navLinkClicked)}>
+    <Link to="/home" >
   
       <div className="group relative overflow-hidden flex justify-center items-center cursor-pointer transition-shadow hover:shadow-2xl  hover:shadow-black/30">
         <div className="h-76 w-full ">

@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
 import Search from './components/Search';
+import Nav from './components/Nav';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
  const route = createBrowserRouter([
@@ -16,8 +17,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     element: <Layout/>, 
     children: [
       {
-        path: "/home",
-        element: <Home/>
+        path: "",
+        element: <Nav/>
       },
       {
         path: "/search",
@@ -30,8 +31,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         ]
       },
       {
-        path: "/about",
-        element: <About/>
+        path: "/home",
+        element: <Home/>
       }
     ]
   }

@@ -1,5 +1,6 @@
 import history from "./h.json"
 
+
 export function getTotalPlayedSongs() {
     let count = 0
     for (let song of history) {
@@ -270,4 +271,15 @@ export function top100Artists() {
         const   artists = top100Artists();
         const position = artists.findIndex((artist) => artist[0] === artistName);
         return position + 1
+      }
+
+
+      export function searchForArtist (filterText ) {
+        const artistNames = new Set(
+          history
+            .filter((item) => item.master_metadata_album_artist_name)// filtra so as musicas
+            .map((item) => item.master_metadata_album_artist_name)//cria um array
+            .filter((name) => name.toLowerCase().includes(filterText.toLowerCase()))// pode passar tudo com lowercase
+        )
+        return Array.from(artistNames)
       }
