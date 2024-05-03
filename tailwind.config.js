@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,jsx,js}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        "custom-purple": "#503658",
+      },
+    },
   },
   plugins: [],
-}
+};

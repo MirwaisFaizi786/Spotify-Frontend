@@ -1,27 +1,29 @@
-import { IoPlayBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <Link to="/home" >
-  
-      <div className="group relative overflow-hidden flex justify-center items-center cursor-pointer transition-shadow hover:shadow-2xl  hover:shadow-black/30">
-        <div className="h-76 w-full ">
+    <div>
+      <div className="group relative overflow-hidden flex justify-center items-center  transition-shadow hover:shadow-2xl  hover:shadow-black/30">
+        <div className="h-96 w-full ">
           <img
-            className=" w-full h-60 object-cover rounded-md transition-transform group-hover:scale-105 group-hover:rotate-1"
+            className=" w-full h-96 object-cover rounded-md transition-transform"
             src="banner.jpg"
             alt=""
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black "></div>
           <div className="absolute inset-0 flex justify-center items-center text-white text-3xl capitalize ">
-            <h1>list of played songs</h1>
-            <button className="absolute bottom-5 right-5">
-              <IoPlayBack className="w-15 h-15 rounded-full bg-orange-700 p-1" />
-            </button>
+            <h1 className="font-sans font-extrabold text-6xl text-custom-purple">
+              Listening Stats
+            </h1>
+            <Link to="/home">
+              <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-20 w-40 h-10 bg-black rounded-full font-sans text-lg font-semibold">
+                Check it out
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

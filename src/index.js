@@ -9,6 +9,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Search from './components/Search';
 import Nav from './components/Nav';
+import ArthistDetails from './components/ArthistDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
  const route = createBrowserRouter([
@@ -33,7 +34,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       {
         path: "/home",
         element: <Home/>
-      }
+      },
+      {
+        path: "/arthist/:id",
+        element: <ArthistDetails/>
+      },
+
     ]
   }
  ])

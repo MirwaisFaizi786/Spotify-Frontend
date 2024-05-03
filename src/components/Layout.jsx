@@ -55,7 +55,7 @@ function Layout() {
           />
         </Sidebar>
       </div>
-      <main className="w-full h-screen bg-gray-800">
+      <main className="w-full  bg-gray-800">
        <Outlet />
       </main>
       

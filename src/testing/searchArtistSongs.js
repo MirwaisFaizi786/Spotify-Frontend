@@ -716,7 +716,7 @@ const history =[
   }
 
 
-  console.log(top20BestSongsThisArtist("The Weeknd") );
+// +++++++++++++++++++++++++++++
 
 
 
@@ -749,4 +749,75 @@ const history =[
     return position + 1
   }
 
-console.log(thePositionOfTheArtistTop100("The Weeknd"));
+// ++++++=====================
+
+
+ function searchArtistDetails(artistName) {
+  const result = history.filter((song) => {
+      const artist = song.master_metadata_album_artist_name;
+      return artist && artist.toLowerCase().includes(artistName.toLowerCase());
+  });
+  return [...new Set(result.map((e) => e.master_metadata_album_artist_name)) ];
+}
+
+
+function AllArthistList() {
+  const artistList = [];
+  for (let song of history) {
+    if (song.master_metadata_album_artist_name !== null) {
+      artistList.push(song.master_metadata_album_artist_name);
+    }
+  }
+  return [ ...new Set(artistList) ];
+}
+
+
+
+ //============================================= not checked
+ function groupArtists() {
+  const artistPlayCount = {};
+
+  for (let song of history) {
+    if (song.master_metadata_track_name !== null) {
+      const artistName = song.master_metadata_album_artist_name;
+
+      if (artistName in artistPlayCount) {
+        artistPlayCount[artistName]++;
+      } else {
+        artistPlayCount[artistName] = 1;
+      }
+    }
+  }
+
+  const artistPlayCountArray = Object.entries(artistPlayCount);
+
+  artistPlayCountArray.sort((a, b) => b[1] - a[1]);
+
+  return artistPlayCount;
+}
+
+ function calculateArtistPercentages() {
+  const bla = groupArtists();
+  // Calculate the total number of reproductions
+  const totalPlays = history.length;
+
+  // Object to store the percentages of each artist
+  const artistPercentages = [];
+
+  // Calculate the percentage of reproductions for each artist
+  for (let [artist, plays] of Object.entries(bla)) {
+    const percentage = (plays / totalPlays) * 100;
+    artistPercentages.push({ artist, percentage: percentage.toFixed(2) }); //Round to two decimal places
+  }
+
+
+  return artistPercentages.sort((a, b) => b.percentage - a.percentage);
+}
+
+
+function searchForArtistPercentage(artistName) {
+  const result = calculateArtistPercentages().find((artist) => artist.artist.toLowerCase() === artistName.toLowerCase());
+  return result ? result.percentage : 0;
+}
+console.log(searchForArtistPercentage("TOOL"));
+console.log(calculateArtistPercentages(history));
