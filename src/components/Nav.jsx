@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import ListenerStatistic from "./statistic/ListenerStatistic";
-import { IoMusicalNote } from "react-icons/io5";
+
 import {
   getTotalPlayedSongs,
   totalListenedSongs,
@@ -20,9 +20,9 @@ function Nav() {
   const season = toFindWhatSeasonOfTheYearTheUserListenToSongs();
   return (
     <section className="flex w-full gap-2 rounded-md m-2">
-      <div className="flex-1 flex flex-col bg-stone-950">
+      <div className="flex-1 flex flex-col bg-neutral-900">
         <Navbar />
-        <h1 className="m-4 font-sans text-3xl font-semibold text-white	">
+        <h1 className="m-4 font-sans text-3xl font-semibold text-white">
           Your top
         </h1>
         <div className="grid grid-cols-3 gap-14 mx-36 mb-36">
@@ -57,8 +57,8 @@ function Nav() {
           <ListenerStatistic
             message="Peak Listening Hours"
             color="bg-blue-400"
-            statistic={timeOfTheDayTheUserListenedToMusic}
-            subtitle="high traffic"
+            statistic={`${timeOfTheDayTheUserListenedToMusic}:00`}
+            subtitle="PM"
           />
 
           <ListenerStatistic

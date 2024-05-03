@@ -10,8 +10,8 @@ function SidebarItem({ icon, text, active, alert ,path , setNavLinkClicked, navL
       <li
         className={`relative flex items-center group py-2 px-3 my-1 font-medium cursor-pointer rounded-md transition-colors ${
           active
-            ? "bg-gradient-to-tr from-gray-600 to-gray-800 text-gray-800 "
-            : "hover:bg-gray-700 text-gray-600"
+            ? "bg-gradient-to-tr from-neutral-600 to-neutral-800 text-neutral-800 "
+            : "hover:bg-neutral-500 text-neutral-600"
         }`}
       >
         {icon}
@@ -32,11 +32,9 @@ function SidebarItem({ icon, text, active, alert ,path , setNavLinkClicked, navL
         {!expanded && (
           <div
             className="absolute left-full rounded-md px-2 py-1 ml-6 z-40
-      bg-indigo-400 text-indigo-800 text-sm invisible  opacity-20 -translate-x-3
-      transition-all
-      group-hover:visible group-hover:opacity-100 group-hover:translate-x-0"
+      bg-stone-400 text-stone-950 text-sm invisible  opacity-20 -translate-x-3
+      transition-all"
           >
-            {text + "hello"}
           </div>
         )}
       </li>

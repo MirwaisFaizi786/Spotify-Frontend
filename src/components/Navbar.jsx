@@ -10,7 +10,7 @@ function Navbar() {
             src="banner.jpg"
             alt=""
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black "></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900 "></div>
           <div className="absolute inset-0 flex justify-center items-center text-white text-3xl capitalize ">
             <h1 className="font-sans font-extrabold text-6xl text-custom-purple">
               Listening Stats
