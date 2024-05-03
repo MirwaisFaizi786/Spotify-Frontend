@@ -444,7 +444,7 @@ export function top100SongsThisArtistAllTime(artistName) {
       uniqueArtistPercentagesArray.push(song);
     }
   });
-  return uniqueArtistPercentagesArray.slice(0, 100);
+  return uniqueArtistPercentagesArray.slice(0, 20);
 }
 export function top100SongsThisArtistArgs(histories, artistName) {
   if (!Array.isArray(histories)) {
@@ -465,7 +465,7 @@ export function top100SongsThisArtistArgs(histories, artistName) {
       uniqueArtistPercentagesArray.push(song);
     }
   });
-  return uniqueArtistPercentagesArray.slice(0, 100);
+  return uniqueArtistPercentagesArray.slice(0, 20);
 }
 
 export function top100SongsFromPeriod(periodInDays, artistName) {
@@ -557,3 +557,8 @@ export function toFindThePositionOfTheArtistTop100(artistName) {
 
 
 }
+
+
+// ///top20BestSongsThisArtist ,
+// top100SongsThisArtistAllTime, 
+// top100SongsFromPeriod,
