@@ -8,9 +8,9 @@ import {
   top100TrackFromPeriod,
 } from "../utils/logic";
 
-function Home() {
+function Check() {
   const [selectedPeriod, setSelectedPeriod] = useState("allTime");
-  const [dataTopArtists, setDataTopArtists] = useState(() => top100Artists());
+  const [dataTopSongs, setDataTopSongs] = useState(() => top100Artists());
   const [top100AlbumsList, setTop100AlbumsList] = useState(() => top100Album());
   const [top100TracksList, setTop100TracksList] = useState(() =>
     top100Tracks()
@@ -19,22 +19,22 @@ function Home() {
   const updatePeriod = (period) => {
     setSelectedPeriod(period);
     if (period === "allTime") {
-      setDataTopArtists(top100Artists());
+      setDataTopSongs(top100Artists());
       setTop100AlbumsList(top100Album());
       setTop100TracksList(top100Tracks());
     }
     if (period === "fourWeeks") {
-      setDataTopArtists(top100ArtistsFromPeriod(28));
+      setDataTopSongs(top100ArtistsFromPeriod(28));
       setTop100AlbumsList(top100AlbumFromPeriod(28));
       setTop100TracksList(top100TrackFromPeriod(28));
     }
     if (period === "sixMonths") {
-      setDataTopArtists(top100ArtistsFromPeriod(180));
+      setDataTopSongs(top100ArtistsFromPeriod(180));
       setTop100AlbumsList(top100AlbumFromPeriod(180));
       setTop100TracksList(top100TrackFromPeriod(180));
     }
     if (period === "lastYear") {
-      setDataTopArtists(top100ArtistsFromPeriod(365));
+      setDataTopSongs(top100ArtistsFromPeriod(365));
       setTop100AlbumsList(top100AlbumFromPeriod(365));
       setTop100TracksList(top100TrackFromPeriod(365));
     }
@@ -120,7 +120,7 @@ function Home() {
                           {indexParent + 1}
                         </span>{" "}
                         <span className="font-semibold px-9 text-white ">
-                          {song} { song.master_metadata_album_artist_name}
+                          {song}
                         </span>{" "}
                       </div>
                     </li>
@@ -131,7 +131,7 @@ function Home() {
 
           <ul className="grid grid-cols-1">
             <h2 className="text-white text-white text-xl	font-bold">Artists</h2>
-            {dataTopArtists.map((artist, indexParent) =>
+            {dataTopSongs.map((artist, indexParent) =>
               artist.map(
                 (song, index) =>
                   index !== 1 && (
@@ -184,4 +184,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Check;
